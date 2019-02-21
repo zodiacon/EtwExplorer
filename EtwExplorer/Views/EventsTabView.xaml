@@ -24,7 +24,7 @@
             <DataGrid.RowDetailsTemplate>
                 <DataTemplate>
                     <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding EventDetails}" IsReadOnly="True" BorderBrush="{DynamicResource BlackBrush}" BorderThickness="1" Margin="4"
-                              HorizontalAlignment="Left" SelectionMode="Single" SelectionUnit="FullRow">
+                              HorizontalAlignment="Left" SelectionMode="Single" SelectionUnit="FullRow" MaxHeight="300">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Name" Binding="{Binding Name}" FontWeight="Bold" />
                             <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
