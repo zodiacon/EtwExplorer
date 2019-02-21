@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EtwExplorer.Views"
                    xmlns:z="http://zodiacon.wpf/2016"
-        mc:Ignorable="d"
+        mc:Ignorable="d" ResizeMode="CanResizeWithGrip"
         Title="Select ETW Provider" TitleCaps="False" MinHeight="400" MinWidth="600" SizeToContent="Width" >
     <Grid Margin="8">
         <Grid.RowDefinitions>
@@ -20,6 +20,7 @@
             <TextBlock Text="Search:" VerticalAlignment="Center" />
             <TextBox Margin="4,0,0,0" Width="200" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Delay=300}" 
                      metro:TextBoxHelper.Watermark="Type to search" metro:TextBoxHelper.ClearTextButton="True" z:FocusProperties.FocusOnLoad="True"/>
+            <ToggleButton Style="{StaticResource MetroFlatToggleButton}" Content="Likely Existing Manifests" IsChecked="{Binding IsLikely}" Margin="4,0,0,0"/>
             <CheckBox Content="Close Current Manifest" Margin="8,0,0,0" IsChecked="{Binding CloseCurrentManifest}" />
         </StackPanel>
 
@@ -30,9 +31,11 @@
                 <DataGridTextColumn Header="GUID" Binding="{Binding Guid}" />
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center">
-            <Button Content="OK" Width="80" Command="{Binding OKCommand}" IsDefault="True" />
-            <Button Content="Cancel" Width="80" Command="{Binding CancelCommand}" Margin="20,0,0,0" IsCancel="True" />
-        </StackPanel>
+        <Border BorderThickness="0,2,0,0" Grid.Row="4" BorderBrush="{DynamicResource AccentColorBrush2}" Padding="8">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="OK" Width="80" Command="{Binding OKCommand}" IsDefault="True" />
+                <Button Content="Cancel" Width="80" Command="{Binding CancelCommand}" Margin="20,0,0,0" IsCancel="True" />
+            </StackPanel>
+        </Border>
     </Grid>
 </metro:MetroWindow>

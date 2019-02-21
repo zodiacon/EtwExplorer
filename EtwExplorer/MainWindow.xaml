@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:EtwExplorer"
         xmlns:view="clr-namespace:EtwExplorer.Views"
         mc:Ignorable="d"
-        Title="ETW Explorer v0.3 (C)2019 Pavel Yosifovch" TitleCaps="False" ResizeMode="CanResizeWithGrip"
+        Title="ETW Explorer v0.35 (C)2019 Pavel Yosifovch" TitleCaps="False" ResizeMode="CanResizeWithGrip"
                    Icon="/icons/app.ico">
     <view:MainView>
         
