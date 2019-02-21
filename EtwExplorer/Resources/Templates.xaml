@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:view="clr-namespace:EtwExplorer.Views"
+                    xmlns:vm="clr-namespace:EtwExplorer.ViewModels">
+    <DataTemplate DataType="{x:Type vm:StringsTabViewModel}">
+        <view:StringsTabView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SummaryTabViewModel}">
+        <view:SummaryTabView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EventsTabViewModel}">
+        <view:EventsTabView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:XmlTabViewModel}">
+        <view:XmlTabView />
+    </DataTemplate>
+</ResourceDictionary>

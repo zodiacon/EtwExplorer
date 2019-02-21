@@ -1,0 +1,38 @@
+﻿<metro:MetroWindow x:Class="EtwExplorer.Views.EtwProviderSelectionDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EtwExplorer.Views"
+                   xmlns:z="http://zodiacon.wpf/2016"
+        mc:Ignorable="d"
+        Title="Select ETW Provider" TitleCaps="False" MinHeight="400" MinWidth="600" SizeToContent="Width" >
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Search:" VerticalAlignment="Center" />
+            <TextBox Margin="4,0,0,0" Width="200" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Delay=300}" 
+                     metro:TextBoxHelper.Watermark="Type to search" metro:TextBoxHelper.ClearTextButton="True" z:FocusProperties.FocusOnLoad="True"/>
+            <CheckBox Content="Close Current Manifest" Margin="8,0,0,0" IsChecked="{Binding CloseCurrentManifest}" />
+        </StackPanel>
+
+        <DataGrid Grid.Row="2" AutoGenerateColumns="False" IsReadOnly="True" SelectionUnit="FullRow" SelectionMode="Single" SelectedItem="{Binding SelectedProvider, Mode=TwoWay}"
+                  ItemsSource="{Binding Providers}" metro:ButtonHelper.PreserveTextCase="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" FontWeight="Bold" />
+                <DataGridTextColumn Header="GUID" Binding="{Binding Guid}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center">
+            <Button Content="OK" Width="80" Command="{Binding OKCommand}" IsDefault="True" />
+            <Button Content="Cancel" Width="80" Command="{Binding CancelCommand}" Margin="20,0,0,0" IsCancel="True" />
+        </StackPanel>
+    </Grid>
+</metro:MetroWindow>
