@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EtwManifestParsing {
 	public sealed class EtwKeyword {
-		public string Name { get; internal set; }
-		public string Message { get; internal set; }
-		public ulong Mask { get; internal set; }
+		public string Name { get; set; }
+		public string Message { get; set; }
+		public ulong Mask { get; set; }
 
 		public override string ToString() => $"{Name} {Message} 0x{Mask:X}";
 

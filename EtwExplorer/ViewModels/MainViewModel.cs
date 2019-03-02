@@ -22,6 +22,7 @@ namespace EtwExplorer.ViewModels {
 		public IList<TabViewModelBase> Tabs => _tabs;
 
 		public EtwManifest Manifest { get; private set; }
+		public EtwKeyword[] Keywords { get; private set; }
 
 		string _filename;
 		public string FileName {
@@ -37,12 +38,16 @@ namespace EtwExplorer.ViewModels {
 		}
 
 		private void AddTabs() {
-			Tabs.Add(new SummaryTabViewModel(Manifest));
-			Tabs.Add(new EventsTabViewModel(Manifest));
-			Tabs.Add(new KeywordsTabViewModel(Manifest));
-			Tabs.Add(new StringsTabViewModel(Manifest));
-			Tabs.Add(new XmlTabViewModel(Manifest.Xml));
-
+			if (Keywords == null) {
+				Tabs.Add(new SummaryTabViewModel(Manifest));
+				Tabs.Add(new EventsTabViewModel(Manifest));
+				Tabs.Add(new KeywordsTabViewModel(Manifest));
+				Tabs.Add(new StringsTabViewModel(Manifest));
+				Tabs.Add(new XmlTabViewModel(Manifest.Xml));
+			}
+			else {
+				Tabs.Add(new KeywordsTabViewModel(Keywords));
+			}
 			SelectedTab = Tabs[0];
 		}
 
@@ -72,9 +77,17 @@ namespace EtwExplorer.ViewModels {
 					if (vm.CloseCurrentManifest)
 						DoClose();
 					DoOpenXml(xml);
+					Keywords = null;
 				}
-				catch (Exception ex) {
-					UI.MessageBoxService.ShowMessage(ex.Message, Constants.AppTitle);
+				catch (Exception) {
+					Keywords = TraceEventProviders.GetProviderKeywords(vm.SelectedProvider.Guid).Select(info => new EtwKeyword {
+						Name = info.Name,
+						Mask = info.Value,
+						Message = info.Description
+					}).ToArray();
+					UI.MessageBoxService.ShowMessage("Full event information is not available. Showing keywords only.", Constants.AppTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+
+					AddTabs();
 				}
 			}
 		});

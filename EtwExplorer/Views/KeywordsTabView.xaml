@@ -10,7 +10,7 @@
     <Grid>
         <DataGrid ItemsSource="{Binding Keywords}" AutoGenerateColumns="False" IsReadOnly="True" metro:ButtonHelper.PreserveTextCase="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" FontWeight="Bold" />
                 <DataGridTextColumn Header="Value" Binding="{Binding Mask, StringFormat=0x\{0:X\}}" ElementStyle="{StaticResource DataGridCellRightJustifiedStyle}" />
                 <DataGridTextColumn Header="Description" Binding="{Binding Message}" />
             </DataGrid.Columns>

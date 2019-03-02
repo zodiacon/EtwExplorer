@@ -17,5 +17,9 @@ namespace EtwExplorer.ViewModels
 		public KeywordsTabViewModel(EtwManifest manifest) {
 			Keywords = manifest.Keywords;
 		}
+
+		public KeywordsTabViewModel(EtwKeyword[] keywords) {
+			Keywords = keywords;
+		}
 	}
 }
