@@ -62,7 +62,7 @@
         <StatusBar Grid.Row="3">
             <TextBlock Text="{Binding FileName, TargetNullValue=(No file), StringFormat=File: \{0\}}" />
             <Separator />
-            <TextBlock Text="{Binding Manifest.ProviderName}" />
+            <TextBlock Text="{Binding ProviderName}" />
         </StatusBar>
     </Grid>
 </UserControl>
