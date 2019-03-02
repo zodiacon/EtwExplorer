@@ -98,6 +98,7 @@
     <Compile Include="ViewModels\EtwEventViewModel.cs" />
     <Compile Include="ViewModels\EtwProviderSelectionViewModel.cs" />
     <Compile Include="ViewModels\EventsTabViewModel.cs" />
+    <Compile Include="ViewModels\KeywordsTabViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\StringsTabViewModel.cs" />
     <Compile Include="ViewModels\SummaryTabViewModel.cs" />
@@ -108,6 +109,9 @@
     </Compile>
     <Compile Include="Views\EventsTabView.xaml.cs">
       <DependentUpon>EventsTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeywordsTabView.xaml.cs">
+      <DependentUpon>KeywordsTabView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -143,6 +147,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EventsTabView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeywordsTabView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
@@ -203,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\keywords.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -39,6 +39,7 @@ namespace EtwExplorer.ViewModels {
 		private void AddTabs() {
 			Tabs.Add(new SummaryTabViewModel(Manifest));
 			Tabs.Add(new EventsTabViewModel(Manifest));
+			Tabs.Add(new KeywordsTabViewModel(Manifest));
 			Tabs.Add(new StringsTabViewModel(Manifest));
 			Tabs.Add(new XmlTabViewModel(Manifest.Xml));
 
@@ -66,7 +67,7 @@ namespace EtwExplorer.ViewModels {
 		public ICommand OpenRegisteredCommand => new DelegateCommand(() => {
 			var vm = UI.DialogService.CreateDialog<EtwProviderSelectionViewModel, EtwProviderSelectionDialog>();
 			if (true == vm.ShowDialog()) {
-				try {
+				try {			
 					var xml = RegisteredTraceEventParser.GetManifestForRegisteredProvider(vm.SelectedProvider.Guid);
 					if (vm.CloseCurrentManifest)
 						DoClose();

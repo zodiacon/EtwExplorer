@@ -14,4 +14,7 @@
     <DataTemplate DataType="{x:Type vm:XmlTabViewModel}">
         <view:XmlTabView />
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:KeywordsTabViewModel}">
+        <view:KeywordsTabView />
+    </DataTemplate>
 </ResourceDictionary>
