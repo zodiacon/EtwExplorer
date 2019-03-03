@@ -5,4 +5,4 @@ Event Tracing for Windows (ETW) is a logging facility built into the Windows OS.
 
 ETW Explorer attempts to show these events with a simple GUI.
 
-![ETWExplorer]()
+![ETWExplorer](https://github.com/zodiacon/EtwExplorer/blob/master/etwexplorer2.PNG)
