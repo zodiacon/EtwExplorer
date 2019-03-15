@@ -79,6 +79,7 @@ namespace EtwExplorer.ViewModels {
 
 		void DoClose() {
 			Manifest = null;
+			Keywords = null;
 			Tabs.Clear();
 			FileName = null;
 			RaisePropertyChanged(nameof(Manifest));
@@ -103,6 +104,7 @@ namespace EtwExplorer.ViewModels {
 					UI.MessageBoxService.ShowMessage("Full event information is not available. Showing keywords only.", Constants.AppTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
 
 					if (vm.CloseCurrentManifest) {
+						DoClose();
 						Keywords = keywords;
 						AddTabs();
 					}
