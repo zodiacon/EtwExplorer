@@ -160,5 +160,21 @@ namespace EtwExplorer.ViewModels {
 				UI.MessageBoxService.ShowMessage($"Error: {ex.Message}", Constants.AppTitle);
 			}
 		}
+
+		public DelegateCommand SaveXmlCommand => new DelegateCommand(() => {
+			var filename = UI.FileDialogService.GetFileForSave("XML files|*.xml|All Files|*.*");
+			if (filename == null)
+				return;
+			DoSave(filename);
+		}, () => Manifest != null).ObservesProperty(() => Manifest);
+
+		private void DoSave(string filename) {
+			try {
+				File.WriteAllText(filename, Manifest.Xml);
+			}
+			catch (IOException ex) {
+				UI.MessageBoxService.ShowMessage(ex.Message, Constants.AppTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
 	}
 }

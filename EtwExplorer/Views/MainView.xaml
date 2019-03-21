@@ -21,6 +21,7 @@
                 <MenuItem Header="Open Registered ETW Provider Manifest..." InputGestureText="Ctrl+O" Command="{Binding OpenRegisteredCommand}" 
                           Icon="{z:Image /icons/open.ico, Width=16, Height=16}"/>
                 <MenuItem Header="Open XML ETW Manifest..." Command="{Binding OpenXmlCommand}" />
+                <MenuItem Header="Save XML Manifest..." InputGestureText="Ctrl+S" Command="{Binding SaveXmlCommand}" />
                 <MenuItem Header="Close" Command="{Binding CloseCommand}" InputGestureText="Ctrl+F4" />
                 <Separator />
                 <MenuItem Header="_Recent Items" ItemsSource="{Binding RecentItems}">
