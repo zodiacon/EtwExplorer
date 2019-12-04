@@ -16,7 +16,7 @@ namespace EtwManifestParsing {
 				if (stringTable != null) {
 					var strings = stringTable.DescendantNodes().OfType<XElement>().ToArray();
 					var table = new Dictionary<string, string>(strings.Length);
-					Array.ForEach(strings, node => table.Add((string)node.Attribute("id"), (string)node.Attribute("value")));
+					Array.ForEach(strings, node => { try { table.Add((string)node.Attribute("id"), (string)node.Attribute("value")); } catch { } });
 					manifest.StringTable = table;
 				}
 
