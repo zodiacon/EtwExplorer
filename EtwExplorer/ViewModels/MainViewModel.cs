@@ -95,13 +95,13 @@ namespace EtwExplorer.ViewModels {
 					DoOpenXml(xml);
 					Keywords = null;
 				}
-				catch (Exception) {
+				catch (Exception e) {
 					var keywords = TraceEventProviders.GetProviderKeywords(vm.SelectedProvider.Guid).Select(info => new EtwKeyword {
 						Name = info.Name,
 						Mask = info.Value,
 						Message = info.Description
 					}).ToArray();
-					UI.MessageBoxService.ShowMessage("Full event information is not available. Showing keywords only.", Constants.AppTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+					UI.MessageBoxService.ShowMessage($"{e.Message}\nShowing keywords only.", Constants.AppTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
 
 					if (vm.CloseCurrentManifest) {
 						DoClose();
