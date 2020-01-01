@@ -88,11 +88,27 @@ namespace EtwExplorer.ViewModels {
 		public ICommand OpenRegisteredCommand => new DelegateCommand(() => {
 			var vm = UI.DialogService.CreateDialog<EtwProviderSelectionViewModel, EtwProviderSelectionDialog>();
 			if (true == vm.ShowDialog()) {
-				try {			
-					var xml = RegisteredTraceEventParser.GetManifestForRegisteredProvider(vm.SelectedProvider.Guid);
-					if (vm.CloseCurrentManifest)
-						DoClose();
-					DoOpenXml(xml);
+				if (vm.CloseCurrentManifest)
+					DoClose();
+				try {
+					var xml = string.Empty;
+					try {
+						xml = RegisteredTraceEventParser.GetManifestForRegisteredProvider(vm.SelectedProvider.Guid);
+					}
+					catch (ApplicationException ae) {
+						// look for a WMI EventTrace class instead - but throw the original exception otherwise
+						try {
+							DoOpenWmiEventTrace(vm.SelectedProvider.Guid);
+							UI.MessageBoxService.ShowMessage($"{ae.Message}\n\nShowing WMI EventTrace class details instead.", Constants.AppTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+						}
+						catch {
+							throw ae;
+						}
+					}
+
+					if (xml.Length > 0)
+						DoOpenXml(xml);
+
 					Keywords = null;
 				}
 				catch (Exception e) {
@@ -118,7 +134,14 @@ namespace EtwExplorer.ViewModels {
 		});
 
 		private void DoOpenXml(string xml) {
-			var manifest = ManifestParser.Parse(xml);
+			DoOpen(ManifestParser.Parse(xml));
+		}
+
+		private void DoOpenWmiEventTrace(Guid provider) {
+			DoOpen(ManifestParser.ParseWmiEventTraceClass(provider));
+		}
+
+		private void DoOpen(EtwManifest manifest) {
 			if (Manifest == null) {
 				Manifest = manifest;
 				RaisePropertyChanged(nameof(Manifest));

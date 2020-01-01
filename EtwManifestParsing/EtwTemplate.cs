@@ -23,6 +23,12 @@ namespace EtwManifestParsing {
 			}).ToArray();
 		}
 
+		internal EtwTemplate(string id, EtwTemplateData[] items)
+		{
+			Id = id;
+			Items = items;
+		}
+
 		public override string ToString() => $"{Id} {Items.Length} template items";
 	}
 }
