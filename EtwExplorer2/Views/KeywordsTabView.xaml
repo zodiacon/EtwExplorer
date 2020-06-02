@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="EtwExplorer.Views.KeywordsTabView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EtwExplorer.Views"
+             mc:Ignorable="d" 
+             xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Keywords}" AutoGenerateColumns="False" IsReadOnly="True" metro:ButtonHelper.PreserveTextCase="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" FontWeight="Bold" />
+                <DataGridTextColumn Header="Value" Binding="{Binding Mask, StringFormat=0x\{0:X\}}" ElementStyle="{StaticResource DataGridCellRightJustifiedStyle}" />
+                <DataGridTextColumn Header="Description" Binding="{Binding Message}" />
+            </DataGrid.Columns>
+        </DataGrid>       
+    </Grid>
+</UserControl>

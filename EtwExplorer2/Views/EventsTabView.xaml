@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="EtwExplorer.Views.EventsTabView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EtwExplorer.Views"
+             xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             xmlns:z="http://zodiacon.wpf/2016"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="8" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Search:" VerticalAlignment="Center" />
+            <TextBox Margin="4,0,0,0" Width="300" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Delay=300}" 
+                     metro:TextBoxHelper.Watermark="Type to search" metro:TextBoxHelper.ClearTextButton="True" z:FocusProperties.FocusOnLoad="True" />
+        </StackPanel>
+        <DataGrid Grid.Row="2" ItemsSource="{Binding Events}" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" 
+                  metro:ButtonHelper.PreserveTextCase="True" RowDetailsVisibilityMode="VisibleWhenSelected" VirtualizingPanel.VirtualizationMode="Recycling">
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding EventDetails}" IsReadOnly="True" BorderBrush="{DynamicResource BlackBrush}" BorderThickness="1" Margin="4"
+                              HorizontalAlignment="Left" SelectionMode="Single" SelectionUnit="FullRow" MaxHeight="300">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" FontWeight="Bold" />
+                            <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Event.Symbol}" FontWeight="Bold" />
+                <DataGridTextColumn Header="Value" Binding="{Binding Event.Value}" ElementStyle="{StaticResource DataGridCellRightJustifiedStyle}"/>
+                <DataGridTextColumn Header="Version" Binding="{Binding Event.Version}" ElementStyle="{StaticResource DataGridCellRightJustifiedStyle}"/>
+                <DataGridTextColumn Header="Task" Binding="{Binding Event.Task}" />
+                <DataGridTextColumn Header="Keyword" Binding="{Binding Event.Keyword}" />
+                <DataGridTextColumn Header="Template" Binding="{Binding Event.Template}" />
+                <DataGridTextColumn Header="Opcode" Binding="{Binding Event.Opcode}" />
+                <DataGridTextColumn Header="Level" Binding="{Binding Event.Level}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

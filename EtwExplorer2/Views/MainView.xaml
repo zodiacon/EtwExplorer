@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="EtwExplorer.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EtwExplorer.Views"
+             mc:Ignorable="d" 
+             xmlns:z="http://zodiacon.wpf/2016"
+             xmlns:vm="clr-namespace:EtwExplorer.ViewModels"
+             xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="_File" z:InputHelper.AttachInputBindings="True">
+                <MenuItem Header="Open Registered ETW Provider Manifest..." InputGestureText="Ctrl+O" Command="{Binding OpenRegisteredCommand}" 
+                          Icon="{z:Image /icons/open.ico, Width=16, Height=16}"/>
+                <MenuItem Header="Open XML ETW Manifest..." Command="{Binding OpenXmlCommand}" />
+                <MenuItem Header="Save XML Manifest..." InputGestureText="Ctrl+S" Command="{Binding SaveXmlCommand}" />
+                <MenuItem Header="Close" Command="{Binding CloseCommand}" InputGestureText="Ctrl+F4" />
+                <Separator />
+                <MenuItem Header="_Recent Items" ItemsSource="{Binding RecentItems}">
+                    
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="E_xit" Command="{Binding ExitCommand}" />
+            </MenuItem>
+        </Menu>
+        <ToolBar Grid.Row="1" >
+            <Button Command="{Binding OpenRegisteredCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/icons/open.ico" Width="24" Height="24" />
+                    <TextBlock Margin="4,0,0,0" VerticalAlignment="Center" Text="Open Provider..." />
+                </StackPanel>
+            </Button>
+        </ToolBar>
+        <TabControl Grid.Row="2" ItemsSource="{Binding Tabs}" z:TabControlProperties.IsCached="True" SelectedItem="{Binding SelectedTab, Mode=TwoWay}" >
+            <TabControl.ItemContainerStyle>
+                <Style TargetType="{x:Type TabItem}" >
+                    <!--<Setter Property="FontSize" Value="15" />-->
+                    <Setter Property="Background" Value="{DynamicResource AccentColorBrush4}" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TabControl.ItemContainerStyle>
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Icon}" Width="16" Height="16" />
+                        <TextBlock Text="{Binding Header}" Margin="4,0,0,0" VerticalAlignment="Center" FontSize="15"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+        </TabControl>
+        <StatusBar Grid.Row="3">
+            <TextBlock Text="{Binding FileName, TargetNullValue=(No file), StringFormat=File: \{0\}}" />
+            <Separator />
+            <TextBlock Text="{Binding ProviderName}" />
+        </StatusBar>
+    </Grid>
+</UserControl>
