@@ -153,8 +153,14 @@ namespace EtwManifestParsing {
                         displayName = (string)qd.Value;
                 }
 
-                if (!string.IsNullOrEmpty(description))
-                    stringTable.Add(!string.IsNullOrEmpty(displayName) ? displayName : (string)categoryVersionClass["__CLASS"], description);
+                if (!string.IsNullOrEmpty(description)) {
+                    // MOF doesn't enforce unique strings, but our model does
+                    // append spaces to make a unique key
+                    var key = !string.IsNullOrEmpty(displayName) ? displayName : (string)categoryVersionClass["__CLASS"];
+                    while (stringTable.ContainsKey(key))
+                        key += " ";
+                    stringTable.Add(key, description);
+                }
 
                 var templateSearcher = new ManagementObjectSearcher("root\\WMI", $"SELECT * FROM meta_class WHERE __superclass = '{categoryVersionClass["__CLASS"]}'", null);
                 foreach (ManagementClass templateClass in templateSearcher.Get()) {
@@ -171,8 +177,14 @@ namespace EtwManifestParsing {
                         else if (qd.Value.GetType() == typeof(String) && qd.Name.ToLower() == "description")
                             description = (string)qd.Value;
                     }
-                    if (!string.IsNullOrEmpty(description))
-                        stringTable.Add(template, description);
+
+                    if (!string.IsNullOrEmpty(description)) {
+                        // append spaces to make a unique key
+                        var key = template;
+                        while (stringTable.ContainsKey(key))
+                            key += " ";
+                        stringTable.Add(key, description);
+                    }
 
                     // EventType -> id(s)
                     var ids = new SortedSet<Int32>();
