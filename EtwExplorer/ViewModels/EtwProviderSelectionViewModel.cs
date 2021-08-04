@@ -76,5 +76,12 @@ namespace EtwExplorer.ViewModels {
 				}
 			}
 		}
-	}
+
+        protected override void OnOK() {
+			if (SelectedProvider == null)
+				return;
+
+            base.OnOK();
+        }
+    }
 }
