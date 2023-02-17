@@ -21,7 +21,7 @@ namespace EtwExplorer.ViewModels {
 		public string ProviderSymbol => _manifest.ProviderSymbol;
 		public int EventCount => _manifest.Events.Length;
 		public int KeywordCount => _manifest.Keywords.Length;
-		public int TaskCount => _manifest.Tasks.Length;
+		public int? TaskCount => _manifest.Tasks?.Length;
 		public int TemplateCount => _manifest.Templates.Length;
 	}
 }
