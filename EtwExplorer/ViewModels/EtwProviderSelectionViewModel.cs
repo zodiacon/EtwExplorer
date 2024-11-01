@@ -50,7 +50,7 @@ namespace EtwExplorer.ViewModels {
 						string text = _searchText.ToLower();
 						cvs.Filter = obj => {
 							var provider = (Provider)obj;
-							return provider.Name.ToLower().Contains(text);
+							return provider.Name.ToLower().Contains(text) || provider.Guid.ToString().ToLower().Contains(text);
 						};
 					}
 				}
