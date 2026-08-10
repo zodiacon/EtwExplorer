@@ -172,7 +172,11 @@ namespace EtwManifestParsing {
             if (providerClass == null) // not found
                 throw new ApplicationException($"Provider {provider} has no corresponding EventTrace class in WMI Repository");
 
-            var mof = ToMofString(providerClass);
+            // One query for the provider's entire subtree, then walk it in memory.
+            // Both the MOF text and the event extraction below need the same classes.
+            var subtree = GetSubtreeBySuperclass((string)providerClass["__CLASS"]);
+
+            var mof = ToMofString(providerClass, subtree);
 
             var manifest = new EtwManifest(mof)
             {
@@ -199,9 +203,7 @@ namespace EtwManifestParsing {
             // WMI EventTrace children ~ a versioned category grouping
             // WMI EventTrace grandchildren ~ instrumentation manifest templates
             // note - event version can be set on the category and/or the event
-            var templateNames = new SortedSet<string>();
-            var taskSearcher = new ManagementObjectSearcher("root\\WMI", $"SELECT * FROM meta_class WHERE __superclass = '{providerClass["__CLASS"]}'", AmendedQualifiers);
-            foreach (ManagementClass categoryVersionClass in taskSearcher.Get())
+            foreach (var categoryVersionClass in ChildrenOf(subtree, (string)providerClass["__CLASS"]))
             {
                 var categoryVersion = 0;
                 var category = string.Empty;
@@ -241,8 +243,7 @@ namespace EtwManifestParsing {
                 // identifies the class ("Bid2Etw_OLEDB_1_Trace").
                 var classGuidName = StripVersionSuffix((string)categoryVersionClass["__CLASS"]);
 
-                var templateSearcher = new ManagementObjectSearcher("root\\WMI", $"SELECT * FROM meta_class WHERE __superclass = '{categoryVersionClass["__CLASS"]}'", AmendedQualifiers);
-                foreach (ManagementClass templateClass in templateSearcher.Get()) {
+                foreach (var templateClass in ChildrenOf(subtree, (string)categoryVersionClass["__CLASS"])) {
                     // EventTypeName qualifier ~ OpCode. It is an array when the class
                     // covers several opcodes, e.g. Process_V2_TypeGroup1 declares
                     // EventType{1, 2, 3, 4} with EventTypeName{"Start", "End",
@@ -339,7 +340,41 @@ namespace EtwManifestParsing {
             return manifest;
         }
 
-        static string ToMofString(ManagementClass wmiClass)
+        /// <summary>
+        /// Every descendant of <paramref name="rootClass"/>, indexed by superclass.
+        /// </summary>
+        /// <remarks>
+        /// One WMI round trip for the whole subtree; round trips are what this parser
+        /// costs, so resolve the hierarchy from the map rather than querying per class.
+        ///
+        /// ISA is a hierarchy operator, not a prefix match: `ISA 'HeapTrace'` will not
+        /// pick up the similarly named HeapTraceProvider that sits above it. It does
+        /// return the root class itself, left here under its own superclass where
+        /// nothing looks it up.
+        /// </remarks>
+        static Dictionary<string, List<ManagementClass>> GetSubtreeBySuperclass(string rootClass) {
+            var bySuperclass = new Dictionary<string, List<ManagementClass>>(StringComparer.OrdinalIgnoreCase);
+            var searcher = new ManagementObjectSearcher("root\\WMI",
+                $"SELECT * FROM meta_class WHERE __this ISA '{rootClass}'", AmendedQualifiers);
+
+            foreach (ManagementClass wmiClass in searcher.Get()) {
+                var superclass = wmiClass["__SUPERCLASS"] as string;
+                if (string.IsNullOrEmpty(superclass))
+                    continue;
+                if (!bySuperclass.TryGetValue(superclass, out var children))
+                    bySuperclass[superclass] = children = new List<ManagementClass>();
+                children.Add(wmiClass);
+            }
+
+            return bySuperclass;
+        }
+
+        /// <summary>The direct subclasses of <paramref name="className"/>, or none.</summary>
+        static IEnumerable<ManagementClass> ChildrenOf(Dictionary<string, List<ManagementClass>> subtree, string className) {
+            return subtree.TryGetValue(className, out var children) ? children : Enumerable.Empty<ManagementClass>();
+        }
+
+        static string ToMofString(ManagementClass wmiClass, Dictionary<string, List<ManagementClass>> subtree)
         {
             var mofString = string.Empty;
 
@@ -369,9 +404,8 @@ namespace EtwManifestParsing {
 
             // event details are in descendant classes of the top-level (EventTrace) provider class
             // so also enumerate all of the children on this class
-            var providerSearcher = new ManagementObjectSearcher("root\\WMI", $"SELECT * FROM meta_class WHERE __superclass = '{wmiClass["__CLASS"]}'", AmendedQualifiers);
-            foreach (ManagementClass providerClass in providerSearcher.Get()) {
-                mofString += ToMofString(providerClass);
+            foreach (var childClass in ChildrenOf(subtree, (string)wmiClass["__CLASS"])) {
+                mofString += ToMofString(childClass, subtree);
             }
 
             return mofString;
