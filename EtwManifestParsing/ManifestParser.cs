@@ -45,6 +45,15 @@ namespace EtwManifestParsing {
 			return null;
 		}
 
+		/// <summary>
+		/// The versioned spelling of an event name, as a manifest writes it:
+		/// "ProcessStart" at version 0, "ProcessStart_V4" at version 4.
+		/// Version 0 takes no suffix.
+		/// </summary>
+		static string VersionedName(string eventName, int version) {
+			return version == 0 ? eventName : $"{eventName}_V{version}";
+		}
+
 		/// <summary>"Process_V2" -> "Process". Leaves names without the suffix alone.</summary>
 		static string StripVersionSuffix(string name) {
 			if (string.IsNullOrEmpty(name))
@@ -226,6 +235,12 @@ namespace EtwManifestParsing {
                     ? displayName
                     : StripVersionSuffix((string)categoryVersionClass["__CLASS"]);
 
+                // Names the class GUID rather than the category: every version of a
+                // category shares one GUID, so the version is stripped. Not the same as
+                // taskName - DisplayName is a display string ("OLEDB") where this
+                // identifies the class ("Bid2Etw_OLEDB_1_Trace").
+                var classGuidName = StripVersionSuffix((string)categoryVersionClass["__CLASS"]);
+
                 var templateSearcher = new ManagementObjectSearcher("root\\WMI", $"SELECT * FROM meta_class WHERE __superclass = '{categoryVersionClass["__CLASS"]}'", AmendedQualifiers);
                 foreach (ManagementClass templateClass in templateSearcher.Get()) {
                     // EventTypeName qualifier ~ OpCode. It is an array when the class
@@ -277,20 +292,23 @@ namespace EtwManifestParsing {
                     {
                         var id = ids[i];
                         var opcodeName = OpcodeName(eventTypeNames, i, id, template);
+                        // A WMI class name (Process_V2_TypeGroup1) names a group of
+                        // opcodes; task plus opcode names one event - Process_Start,
+                        // FileIo_MapFile, OLEDB_TextW.
+                        var eventName = $"{taskName}_{opcodeName}";
                         events.Add($"{category}{id,6}{version,6}",
                             new EtwEvent
                             {
                                 Value = id,
-                                // The WMI class name (Process_V2_TypeGroup1) names a
-                                // group of opcodes, not an event, so several rows used
-                                // to share it. Task plus opcode identifies the event -
-                                // Process_Start, FileIo_MapFile, OLEDB_TextW.
-                                Symbol = $"{taskName}_{opcodeName}",
+                                // Split as manifests do: Task is the version-free name,
+                                // Symbol carries the version, so sorting by Name groups
+                                // an event's versions together.
+                                Symbol = VersionedName(eventName, version),
+                                Task = eventName,
                                 Opcode = opcodeName,
                                 Version = version,
                                 Template = template,
-                                Keyword = string.Empty,
-                                Task = category
+                                Keyword = classGuidName
                             });
                     }
 
