@@ -289,9 +289,16 @@ namespace EtwManifestParsing {
                     }
 
                     // sort by category, id, version
+                    var addedIds = new HashSet<Int32>();
                     for (var i = 0; i < ids.Count; i++)
                     {
                         var id = ids[i];
+                        // A class that repeats an EventType would otherwise throw out of
+                        // events.Add and lose the whole provider. Skipping the repeat is
+                        // what the SortedSet used to do; i still tracks the declaration
+                        // position, so the EventTypeName pairing is unaffected.
+                        if (!addedIds.Add(id))
+                            continue;
                         var opcodeName = OpcodeName(eventTypeNames, i, id, template);
                         // A WMI class name (Process_V2_TypeGroup1) names a group of
                         // opcodes; task plus opcode names one event - Process_Start,
