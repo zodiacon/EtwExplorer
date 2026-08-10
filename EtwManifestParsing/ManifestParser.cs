@@ -64,13 +64,23 @@ namespace EtwManifestParsing {
 
 		/// <summary>
 		/// The name for one opcode of an event class.
-		/// EventTypeName is positional against EventType, but the two are not always
-		/// the same length - FileOperation declares 43 opcodes and a single name - so
-		/// the index is bounds-checked rather than assumed.
 		/// </summary>
+		/// <remarks>
+		/// EventTypeName is positional against EventType, but a class may declare fewer
+		/// names than EventTypes - FileOperation declares one, FileTrace, against 43 IRP
+		/// major function codes. That names the group, so the index clamps to the last
+		/// name rather than falling through: IRP_MJ_CLOSE is not an "End".
+		///
+		/// The generic evntrace.h names are therefore only reached by a class that
+		/// declares no EventTypeName at all, of which there are two - the Dedup and Vss
+		/// WPP classes, where "Start" beats repeating the class name.
+		/// </remarks>
 		static string OpcodeName(string[] eventTypeNames, int index, int opcode, string templateClass) {
-			if (eventTypeNames != null && index < eventTypeNames.Length && !string.IsNullOrEmpty(eventTypeNames[index]))
-				return eventTypeNames[index];
+			if (eventTypeNames != null && eventTypeNames.Length > 0) {
+				var name = eventTypeNames[Math.Min(index, eventTypeNames.Length - 1)];
+				if (!string.IsNullOrEmpty(name))
+					return name;
+			}
 			if (StandardOpcodeNames.TryGetValue(opcode, out var standard))
 				return standard;
 			return StripVersionSuffix(templateClass);
@@ -209,6 +219,7 @@ namespace EtwManifestParsing {
                 var category = string.Empty;
                 var description = string.Empty;
                 var displayName = string.Empty;
+                var displayNames = string.Empty;
                 foreach (QualifierData qd in categoryVersionClass.Qualifiers) {
                     if (qd.Value.GetType() == typeof(Int32) && qd.Name.ToLower() == "eventversion")
                         categoryVersion = (Int32)qd.Value;
@@ -218,6 +229,8 @@ namespace EtwManifestParsing {
                         description = (string)qd.Value;
                     else if (qd.Value.GetType() == typeof(String) && qd.Name.ToLower() == "displayname")
                         displayName = (string)qd.Value;
+                    else if (qd.Value.GetType() == typeof(String) && qd.Name.ToLower() == "displaynames")
+                        displayNames = (string)qd.Value;
                 }
 
                 if (!string.IsNullOrEmpty(description)) {
@@ -231,10 +244,11 @@ namespace EtwManifestParsing {
 
                 // The task half of an event name. DisplayName is the authoritative one
                 // and is what TDH reports - it is "OLEDB" for Bid2Etw_OLEDB_1_Trace,
-                // which stripping the class name could never produce. Only 4 of the
-                // ~190 categories lack it, so the stripped class name is just a backstop.
-                var taskName = !string.IsNullOrEmpty(displayName)
-                    ? displayName
+                // which stripping the class name could never produce. One category
+                // spells it DisplayNames instead, and 3 of the 191 declare neither, so
+                // the stripped class name is just a backstop.
+                var taskName = !string.IsNullOrEmpty(displayName) ? displayName
+                    : !string.IsNullOrEmpty(displayNames) ? displayNames
                     : StripVersionSuffix((string)categoryVersionClass["__CLASS"]);
 
                 // Names the class GUID rather than the category: every version of a
