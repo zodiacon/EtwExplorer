@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 
 namespace EtwExplorer {
 	static class Constants {
@@ -11,7 +6,7 @@ namespace EtwExplorer {
 
 		/// <summary>Product name, for message box captions.</summary>
 		public static string AppTitle { get; } =
-			App.GetCustomAttribute<AssemblyProductAttribute>().Product;
+			App.GetCustomAttribute<AssemblyProductAttribute>()?.Product ?? "ETW Explorer";
 
 		/// <summary>
 		/// The main window title. Every part of it comes from the assembly manifest, so
@@ -19,7 +14,7 @@ namespace EtwExplorer {
 		/// </summary>
 		public static string WindowTitle { get; } = string.Join(" ",
 			AppTitle,
-			"v" + App.GetName().Version.ToString(2),
-			App.GetCustomAttribute<AssemblyCopyrightAttribute>().Copyright);
+			"v" + (App.GetName().Version ?? new Version(0, 0)).ToString(2),
+			App.GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright);
 	}
 }

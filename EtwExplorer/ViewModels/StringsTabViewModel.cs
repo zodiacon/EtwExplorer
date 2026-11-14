@@ -1,35 +1,24 @@
 ﻿using EtwManifestParsing;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace EtwExplorer.ViewModels {
 	sealed class StringsTabViewModel : TabViewModelBase {
-		public class Item {
-			public string Name { get; set; }
-			public string Value { get; set; }
-		}
+		public sealed record Item(string Name, string Value);
 
 		public override string Icon => "/icons/strings.ico";
 
 		public override string Header => "Strings";
 
-		readonly EtwManifest _manifest;
 		public StringsTabViewModel(EtwManifest manifest) {
-			Debug.Assert(manifest != null);
-
-			_manifest = manifest;
-			Strings = _manifest.StringTable.Select(pair => new Item { Name = pair.Key, Value = pair.Value }).ToArray();
+			Strings = manifest.StringTable is { } table
+				? [.. table.Select(pair => new Item(pair.Key, pair.Value))]
+				: [];
 		}
 
 		public Item[] Strings { get; }
 
-		string _searchText;
-		public string SearchText {
+		string? _searchText;
+		public string? SearchText {
 			get => _searchText;
 			set {
 				if (SetProperty(ref _searchText, value)) {

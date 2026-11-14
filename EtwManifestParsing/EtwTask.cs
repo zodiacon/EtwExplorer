@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 
 namespace EtwManifestParsing {
 	public sealed class EtwOpcode {
-		public string Name { get; internal set; }
-		public string Message { get; internal set; }
-		public int Value { get; internal set; }
+		public required string Name { get; init; }
+		public string? Message { get; init; }
+		public int Value { get; init; }
 	}
 
 	public sealed class EtwTask {
@@ -19,18 +14,21 @@ namespace EtwManifestParsing {
 		public EtwOpcode[] Opcodes { get; }
 
 		internal EtwTask(XElement element, EtwManifest manifest) {
-			Name = (string)element.Attribute("name");
-			Value = (int)element.Attribute("value");
+			// name/value are required by the manifest schema; a missing one throws and is
+			// surfaced by ManifestParser.Parse as "Failed to parse manifest XML".
+			Name = element.Attribute("name")!.Value;
+			Value = (int)element.Attribute("value")!;
 
-			Opcodes = element.Descendants("opcode").Select(node => new EtwOpcode {
-				Name = (string)node.Attribute("name"),
-				Message = GetString((string)node.Attribute("message"), manifest),
-				Value = (int)node.Attribute("value")
-			}).ToArray();
+			Opcodes = [.. element.Descendants("opcode").Select(node => new EtwOpcode {
+				Name = node.Attribute("name")!.Value,
+				Message = GetString((string?)node.Attribute("message"), manifest),
+				Value = (int)node.Attribute("value")!
+			})];
 		}
 
-		private string GetString(string name, EtwManifest manifest) {
-			return manifest.GetString(name.Substring(9, name.Length - 10));
+		private static string? GetString(string? name, EtwManifest manifest) {
+			// $(string.Foo) -> Foo
+			return name is null ? null : manifest.GetString(name[9..^1]);
 		}
 
 		public override string ToString() => $"{Name} {Value} {Opcodes.Length} opcodes";

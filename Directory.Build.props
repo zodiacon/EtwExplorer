@@ -8,4 +8,10 @@
 	<Product>ETW Explorer</Product>
   </PropertyGroup>
 
+  <PropertyGroup>
+	<Nullable>enable</Nullable>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<WarningsAsErrors>$(WarningsAsErrors);nullable</WarningsAsErrors>
+  </PropertyGroup>
+
 </Project>

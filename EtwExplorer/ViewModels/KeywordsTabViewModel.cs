@@ -1,13 +1,7 @@
 ﻿using EtwManifestParsing;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EtwExplorer.ViewModels
-{
-	class KeywordsTabViewModel : TabViewModelBase {
+namespace EtwExplorer.ViewModels {
+	sealed class KeywordsTabViewModel : TabViewModelBase {
 		public override string Icon => "/icons/keywords.ico";
 
 		public override string Header => "Keywords";

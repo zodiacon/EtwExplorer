@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EtwExplorer.ViewModels {
+﻿namespace EtwExplorer.ViewModels {
 	sealed class XmlTabViewModel : TabViewModelBase {
 		public override string Icon => "/icons/xml.ico";
 
@@ -15,6 +9,6 @@ namespace EtwExplorer.ViewModels {
 			Xml = xml;
 		}
 
-		
+
 	}
 }

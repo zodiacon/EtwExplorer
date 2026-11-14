@@ -1,9 +1,4 @@
 ﻿using EtwManifestParsing;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EtwExplorer.ViewModels {
 	sealed class SummaryTabViewModel : TabViewModelBase {
@@ -18,7 +13,7 @@ namespace EtwExplorer.ViewModels {
 
 		public string ProviderName => _manifest.ProviderName;
 		public Guid ProviderGuid => _manifest.ProviderGuid;
-		public string ProviderSymbol => _manifest.ProviderSymbol;
+		public string? ProviderSymbol => _manifest.ProviderSymbol;
 		public int EventCount => _manifest.Events.Length;
 		public int KeywordCount => _manifest.Keywords.Length;
 		public int? TaskCount => _manifest.Tasks?.Length;
