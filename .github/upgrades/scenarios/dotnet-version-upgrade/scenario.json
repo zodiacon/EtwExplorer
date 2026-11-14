@@ -3,7 +3,7 @@
   "operationId": "783d9cf8-b75b-44e4-a6df-2588bfbc574c",
   "description": "Upgrade .NET projects to newer .NET versions, including guidance on current release status, support lifecycle (LTS/STS), and recommended upgrade targets.",
   "startTime": "2026-11-14T20:21:51.9065914Z",
-  "lastUpdateTime": "2026-11-14T21:04:22.047332Z",
+  "lastUpdateTime": "2026-11-14T21:07:15.677284Z",
   "properties": {
     "UpgradeTargetFramework": "net11.0",
     "taskStates": {
@@ -11,7 +11,8 @@
       "02-sdk-style-conversion": "Completed",
       "03-manifest-parsing-library": "Completed",
       "04-wpf-app-and-zodiacon-replacement": "Completed",
-      "05-nullable-and-csharp-modernization": "Completed"
+      "05-nullable-and-csharp-modernization": "Completed",
+      "06-final-validation": "Completed"
     }
   },
   "folderPath": ""
