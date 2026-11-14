@@ -1,0 +1,7 @@
+# 02-sdk-style-conversion: Convert both projects to SDK-style on net48
+
+Convert `EtwManifestParsing.csproj` and `EtwExplorer.csproj` from legacy `ToolsVersion=15.0` format to SDK-style (`Microsoft.NET.Sdk` / `Microsoft.NET.Sdk` with `UseWPF`), migrating `packages.config` to `PackageReference`, while keeping the target framework at `net48`. This isolates the structural change from the API-surface change.
+
+During conversion, collapse the 28 direct package references down to the real top-level dependencies — `Microsoft.Diagnostics.Tracing.TraceEvent` (library + app), `MahApps.Metro`, `Prism.Core`, `Zodiacon.WPF` (app) — letting NuGet resolve the rest transitively. Remove the `EnsureNuGetPackageBuildImports` targets, `System.ValueTuple` imports, and `AssemblyInfo.cs` attributes that SDK projects auto-generate (keep `SharedAssemblyInfo.cs` linkage or move its values into MSBuild properties). Remove the auto-generated binding redirects from `App.config` (they conflict with the auto-generated versions per assessment and are not used on .NET Core). Preserve `app.ico`, `Icons/*.ico` resources, `Settings.settings`/`Resources.resx` generators, and XAML `Page`/`ApplicationDefinition` items (SDK globbing handles these with `UseWPF`).
+
+**Done when**: Both csproj files are SDK-style, `packages.config` files are deleted, both still target `net48`, the solution builds with zero errors and zero warnings, and the app launches and opens a manifest.

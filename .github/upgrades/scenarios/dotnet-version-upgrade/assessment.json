@@ -1,0 +1,1520 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "net11.0",
+    "targetDisplayName": ".NETCoreApp,Version=v11.0"
+  },
+  "analysisStartTime": "2026-11-14T20:22:41.6167868Z",
+  "analysisEndTime": "2026-11-14T20:22:42.6595699Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 2,
+      "issues": 7,
+      "incidents": 60,
+      "effort": 60
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 32,
+        "Optional": 0,
+        "Potential": 28,
+        "Information": 0
+      },
+      "category": {
+        "NuGet": 36,
+        "Project": 4,
+        "Binding": 20
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "EtwExplorer\\EtwExplorer.csproj",
+      "startingProject": true,
+      "issues": 7,
+      "storyPoints": 31,
+      "properties": {
+        "appName": "EtwExplorer",
+        "projectKind": "ClassicWinForms",
+        "frameworks": [
+          "net48"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": false,
+        "isTestProject": false,
+        "numberOfFiles": 24,
+        "numberOfCodeFiles": 23,
+        "linesTotal": 1013,
+        "linesOfCode": 896,
+        "totalApiScanned": 0,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "183c3568-27d7-48df-b8af-51bc610bdd62",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Bcl.AsyncInterfaces, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Bcl.AsyncInterfaces, and replace with new package Microsoft.Bcl.AsyncInterfaces 10.0.15",
+              "protected": "Microsoft.Bcl.AsyncInterfaces, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Bcl.AsyncInterfaces, and replace with new package Microsoft.Bcl.AsyncInterfaces 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "Microsoft.Bcl.AsyncInterfaces, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Bcl.AsyncInterfaces, and replace with new package Microsoft.Bcl.AsyncInterfaces 10.0.15",
+            "protectedSnippet": "Microsoft.Bcl.AsyncInterfaces, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Bcl.AsyncInterfaces, and replace with new package Microsoft.Bcl.AsyncInterfaces 10.0.15",
+            "label": "Microsoft.Bcl.AsyncInterfaces 11.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Bcl.AsyncInterfaces",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "7be50e77-a138-473d-a0aa-4008f2a0b006",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.DependencyInjection.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.DependencyInjection.Abstractions, and replace with new package Microsoft.Extensions.DependencyInjection.Abstractions 10.0.15",
+              "protected": "Microsoft.Extensions.DependencyInjection.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.DependencyInjection.Abstractions, and replace with new package Microsoft.Extensions.DependencyInjection.Abstractions 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "Microsoft.Extensions.DependencyInjection.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.DependencyInjection.Abstractions, and replace with new package Microsoft.Extensions.DependencyInjection.Abstractions 10.0.15",
+            "protectedSnippet": "Microsoft.Extensions.DependencyInjection.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.DependencyInjection.Abstractions, and replace with new package Microsoft.Extensions.DependencyInjection.Abstractions 10.0.15",
+            "label": "Microsoft.Extensions.DependencyInjection.Abstractions 11.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.DependencyInjection.Abstractions",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "ecd90bbd-a47c-456b-ad1c-f51cc147d6db",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Logging.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging.Abstractions, and replace with new package Microsoft.Extensions.Logging.Abstractions 10.0.15",
+              "protected": "Microsoft.Extensions.Logging.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging.Abstractions, and replace with new package Microsoft.Extensions.Logging.Abstractions 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "Microsoft.Extensions.Logging.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging.Abstractions, and replace with new package Microsoft.Extensions.Logging.Abstractions 10.0.15",
+            "protectedSnippet": "Microsoft.Extensions.Logging.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging.Abstractions, and replace with new package Microsoft.Extensions.Logging.Abstractions 10.0.15",
+            "label": "Microsoft.Extensions.Logging.Abstractions 11.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Logging.Abstractions",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "d062cbc3-1b2a-426f-94c8-651f3df17252",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Win32.Registry, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.Win32.Registry, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "Microsoft.Win32.Registry, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.Win32.Registry, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.Win32.Registry 5.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Win32.Registry",
+              "PackageVersion": "5.0.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "49a5e4d6-e2d7-4604-ae3e-42df072c06bb",
+          "ruleId": "NuGet.0001",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Xaml.Behaviors.Wpf, 1.1.161\n\nRecommendation:\n\nMicrosoft.Xaml.Behaviors.Wpf, 1.1.39",
+              "protected": "Microsoft.Xaml.Behaviors.Wpf, 1.1.161\n\nRecommendation:\n\nMicrosoft.Xaml.Behaviors.Wpf, 1.1.39"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "Microsoft.Xaml.Behaviors.Wpf, 1.1.161\n\nRecommendation:\n\nMicrosoft.Xaml.Behaviors.Wpf, 1.1.39",
+            "protectedSnippet": "Microsoft.Xaml.Behaviors.Wpf, 1.1.161\n\nRecommendation:\n\nMicrosoft.Xaml.Behaviors.Wpf, 1.1.39",
+            "label": "Microsoft.Xaml.Behaviors.Wpf 1.1.161",
+            "properties": {
+              "PackageId": "Microsoft.Xaml.Behaviors.Wpf",
+              "PackageVersion": "1.1.161",
+              "PackageNewVersion": "1.1.39",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "9ff27b8b-1f68-467b-aa2b-211214e5bee3",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Buffers, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Buffers, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.Buffers, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Buffers, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Buffers 4.6.1",
+            "properties": {
+              "PackageId": "System.Buffers",
+              "PackageVersion": "4.6.1",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "e3355ba8-3b15-46c5-9b3f-a7473daa4283",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Collections.Immutable, 11.0.0\n\nRecommendation:\n\nRemove System.Collections.Immutable, and replace with new package System.Collections.Immutable 10.0.15",
+              "protected": "System.Collections.Immutable, 11.0.0\n\nRecommendation:\n\nRemove System.Collections.Immutable, and replace with new package System.Collections.Immutable 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.Collections.Immutable, 11.0.0\n\nRecommendation:\n\nRemove System.Collections.Immutable, and replace with new package System.Collections.Immutable 10.0.15",
+            "protectedSnippet": "System.Collections.Immutable, 11.0.0\n\nRecommendation:\n\nRemove System.Collections.Immutable, and replace with new package System.Collections.Immutable 10.0.15",
+            "label": "System.Collections.Immutable 11.0.0",
+            "properties": {
+              "PackageId": "System.Collections.Immutable",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "c6855eb0-fc42-4de6-9faa-7d2ce66ed1ac",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Diagnostics.DiagnosticSource, 11.0.0\n\nRecommendation:\n\nRemove System.Diagnostics.DiagnosticSource, and replace with new package System.Diagnostics.DiagnosticSource 10.0.15",
+              "protected": "System.Diagnostics.DiagnosticSource, 11.0.0\n\nRecommendation:\n\nRemove System.Diagnostics.DiagnosticSource, and replace with new package System.Diagnostics.DiagnosticSource 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.Diagnostics.DiagnosticSource, 11.0.0\n\nRecommendation:\n\nRemove System.Diagnostics.DiagnosticSource, and replace with new package System.Diagnostics.DiagnosticSource 10.0.15",
+            "protectedSnippet": "System.Diagnostics.DiagnosticSource, 11.0.0\n\nRecommendation:\n\nRemove System.Diagnostics.DiagnosticSource, and replace with new package System.Diagnostics.DiagnosticSource 10.0.15",
+            "label": "System.Diagnostics.DiagnosticSource 11.0.0",
+            "properties": {
+              "PackageId": "System.Diagnostics.DiagnosticSource",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "de6bd3e7-74f0-408e-8e27-7594e38eddd4",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.IO.Pipelines, 11.0.0\n\nRecommendation:\n\nRemove System.IO.Pipelines, and replace with new package System.IO.Pipelines 10.0.15",
+              "protected": "System.IO.Pipelines, 11.0.0\n\nRecommendation:\n\nRemove System.IO.Pipelines, and replace with new package System.IO.Pipelines 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.IO.Pipelines, 11.0.0\n\nRecommendation:\n\nRemove System.IO.Pipelines, and replace with new package System.IO.Pipelines 10.0.15",
+            "protectedSnippet": "System.IO.Pipelines, 11.0.0\n\nRecommendation:\n\nRemove System.IO.Pipelines, and replace with new package System.IO.Pipelines 10.0.15",
+            "label": "System.IO.Pipelines 11.0.0",
+            "properties": {
+              "PackageId": "System.IO.Pipelines",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "95b4f207-097e-42aa-9db0-941a5c3ba4f2",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Memory, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Memory, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.Memory, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Memory, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Memory 4.6.3",
+            "properties": {
+              "PackageId": "System.Memory",
+              "PackageVersion": "4.6.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "ea137632-3a0e-4d68-b3bf-8c1577076cf8",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Numerics.Vectors, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Numerics.Vectors, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.Numerics.Vectors, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Numerics.Vectors, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Numerics.Vectors 4.6.1",
+            "properties": {
+              "PackageId": "System.Numerics.Vectors",
+              "PackageVersion": "4.6.1",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "bd79716b-0d15-4ace-9e3d-2747e0c37309",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Reflection.Metadata, 11.0.0\n\nRecommendation:\n\nRemove System.Reflection.Metadata, and replace with new package System.Reflection.Metadata 10.0.15",
+              "protected": "System.Reflection.Metadata, 11.0.0\n\nRecommendation:\n\nRemove System.Reflection.Metadata, and replace with new package System.Reflection.Metadata 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.Reflection.Metadata, 11.0.0\n\nRecommendation:\n\nRemove System.Reflection.Metadata, and replace with new package System.Reflection.Metadata 10.0.15",
+            "protectedSnippet": "System.Reflection.Metadata, 11.0.0\n\nRecommendation:\n\nRemove System.Reflection.Metadata, and replace with new package System.Reflection.Metadata 10.0.15",
+            "label": "System.Reflection.Metadata 11.0.0",
+            "properties": {
+              "PackageId": "System.Reflection.Metadata",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "c6fbbf4d-9dd9-42a0-a53b-8544d45d67d7",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Reflection.TypeExtensions, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Reflection.TypeExtensions, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.Reflection.TypeExtensions, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Reflection.TypeExtensions, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Reflection.TypeExtensions 4.7.0",
+            "properties": {
+              "PackageId": "System.Reflection.TypeExtensions",
+              "PackageVersion": "4.7.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "d28045f7-3b94-4e46-b740-c0fe3fc49e8c",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Security.Principal.Windows, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Security.Principal.Windows, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.Security.Principal.Windows, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Security.Principal.Windows, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Security.Principal.Windows 5.0.0",
+            "properties": {
+              "PackageId": "System.Security.Principal.Windows",
+              "PackageVersion": "5.0.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "d38e49f4-aadf-480a-8904-1706adeab675",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Text.Encodings.Web, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Encodings.Web, and replace with new package System.Text.Encodings.Web 10.0.15",
+              "protected": "System.Text.Encodings.Web, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Encodings.Web, and replace with new package System.Text.Encodings.Web 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.Text.Encodings.Web, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Encodings.Web, and replace with new package System.Text.Encodings.Web 10.0.15",
+            "protectedSnippet": "System.Text.Encodings.Web, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Encodings.Web, and replace with new package System.Text.Encodings.Web 10.0.15",
+            "label": "System.Text.Encodings.Web 11.0.0",
+            "properties": {
+              "PackageId": "System.Text.Encodings.Web",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "23989c2c-290f-4c63-904e-7cf9ad0660db",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Text.Json, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Json, and replace with new package System.Text.Json 10.0.15",
+              "protected": "System.Text.Json, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Json, and replace with new package System.Text.Json 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.Text.Json, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Json, and replace with new package System.Text.Json 10.0.15",
+            "protectedSnippet": "System.Text.Json, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Json, and replace with new package System.Text.Json 10.0.15",
+            "label": "System.Text.Json 11.0.0",
+            "properties": {
+              "PackageId": "System.Text.Json",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "f65468f2-6195-4ddf-a289-bfcfbfc99cde",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Threading.Tasks.Extensions, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Threading.Tasks.Extensions, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.Threading.Tasks.Extensions, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Threading.Tasks.Extensions, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Threading.Tasks.Extensions 4.6.3",
+            "properties": {
+              "PackageId": "System.Threading.Tasks.Extensions",
+              "PackageVersion": "4.6.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "9bc57b40-0b5d-4d65-b376-545f0efe9049",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.ValueTuple, 4.6.2\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.ValueTuple, 4.6.2\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "System.ValueTuple, 4.6.2\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.ValueTuple, 4.6.2\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.ValueTuple 4.6.2",
+            "properties": {
+              "PackageId": "System.ValueTuple",
+              "PackageVersion": "4.6.2",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "6cceb223-c1e7-41e3-bc3e-9784eb00fcca",
+          "ruleId": "NuGet.0001",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Zodiacon.WPF, 1.3.0\n\nRecommendation:\n\nNo supported version found",
+              "protected": "Zodiacon.WPF, 1.3.0\n\nRecommendation:\n\nNo supported version found"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "Zodiacon.WPF, 1.3.0\n\nRecommendation:\n\nNo supported version found",
+            "protectedSnippet": "Zodiacon.WPF, 1.3.0\n\nRecommendation:\n\nNo supported version found",
+            "label": "Zodiacon.WPF 1.3.0",
+            "properties": {
+              "PackageId": "Zodiacon.WPF",
+              "PackageVersion": "1.3.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "cd64b572-b713-4dcc-aa1f-dae07aceecc3",
+          "ruleId": "Project.0001",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj"
+          }
+        },
+        {
+          "incidentId": "2a255e86-6a0a-4aad-bee5-47680de3a453",
+          "ruleId": "Project.0002",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net11.0-windows",
+              "protected": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net11.0-windows"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\EtwExplorer.csproj",
+            "snippet": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net11.0-windows",
+            "protectedSnippet": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net11.0-windows",
+            "properties": {
+              "CurrentTargetFramework": ".NETFramework,Version=v4.8",
+              "RecommendedTargetFramework": "net11.0-windows"
+            }
+          }
+        },
+        {
+          "incidentId": "97876952-f91b-4903-b75a-5b4f8dabb6d0",
+          "ruleId": "Binding.0006",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Manual redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but auto-generation would target 6.1.2 (MSB3836 conflict)",
+              "protected": "Manual redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but auto-generation would target 6.1.2 (MSB3836 conflict)"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\App.config",
+            "snippet": "Manual redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but auto-generation would target 6.1.2 (MSB3836 conflict)",
+            "protectedSnippet": "Manual redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but auto-generation would target 6.1.2 (MSB3836 conflict)",
+            "properties": {
+              "AssemblyName": "System.Runtime.CompilerServices.Unsafe",
+              "AssemblyCurrentVersion": "6.0.3.0",
+              "AssemblyNewVersion": "6.1.2"
+            }
+          }
+        },
+        {
+          "incidentId": "45154989-6855-407a-a6da-96359172ac40",
+          "ruleId": "Binding.0006",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Manual redirect for System.Memory targets 4.0.5.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+              "protected": "Manual redirect for System.Memory targets 4.0.5.0 but auto-generation would target 4.6.3 (MSB3836 conflict)"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\App.config",
+            "snippet": "Manual redirect for System.Memory targets 4.0.5.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+            "protectedSnippet": "Manual redirect for System.Memory targets 4.0.5.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+            "properties": {
+              "AssemblyName": "System.Memory",
+              "AssemblyCurrentVersion": "4.0.5.0",
+              "AssemblyNewVersion": "4.6.3"
+            }
+          }
+        },
+        {
+          "incidentId": "14852ea4-9f6b-4717-b4bc-a178599d6811",
+          "ruleId": "Binding.0006",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Manual redirect for System.Buffers targets 4.0.5.0 but auto-generation would target 4.6.1 (MSB3836 conflict)",
+              "protected": "Manual redirect for System.Buffers targets 4.0.5.0 but auto-generation would target 4.6.1 (MSB3836 conflict)"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\App.config",
+            "snippet": "Manual redirect for System.Buffers targets 4.0.5.0 but auto-generation would target 4.6.1 (MSB3836 conflict)",
+            "protectedSnippet": "Manual redirect for System.Buffers targets 4.0.5.0 but auto-generation would target 4.6.1 (MSB3836 conflict)",
+            "properties": {
+              "AssemblyName": "System.Buffers",
+              "AssemblyCurrentVersion": "4.0.5.0",
+              "AssemblyNewVersion": "4.6.1"
+            }
+          }
+        },
+        {
+          "incidentId": "16656bdc-72ae-4cda-a74e-6a22ac6058bb",
+          "ruleId": "Binding.0006",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Manual redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+              "protected": "Manual redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but auto-generation would target 4.6.3 (MSB3836 conflict)"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\App.config",
+            "snippet": "Manual redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+            "protectedSnippet": "Manual redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+            "properties": {
+              "AssemblyName": "System.Threading.Tasks.Extensions",
+              "AssemblyCurrentVersion": "4.2.4.0",
+              "AssemblyNewVersion": "4.6.3"
+            }
+          }
+        },
+        {
+          "incidentId": "7060806e-7fa8-4767-b576-e6d11ff8e2e0",
+          "ruleId": "Binding.0006",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Manual redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but auto-generation would target 0.2.750501 (MSB3836 conflict)",
+              "protected": "Manual redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but auto-generation would target 0.2.750501 (MSB3836 conflict)"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\App.config",
+            "snippet": "Manual redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but auto-generation would target 0.2.750501 (MSB3836 conflict)",
+            "protectedSnippet": "Manual redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but auto-generation would target 0.2.750501 (MSB3836 conflict)",
+            "properties": {
+              "AssemblyName": "Microsoft.Diagnostics.NETCore.Client",
+              "AssemblyCurrentVersion": "0.2.15.501",
+              "AssemblyNewVersion": "0.2.750501"
+            }
+          }
+        },
+        {
+          "incidentId": "f96b5b55-9a3d-4547-8921-892515fb0167",
+          "ruleId": "Binding.0007",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Binding redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but package provides 0.2.750501",
+              "protected": "Binding redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but package provides 0.2.750501"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\App.config",
+            "snippet": "Binding redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but package provides 0.2.750501",
+            "protectedSnippet": "Binding redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but package provides 0.2.750501",
+            "properties": {
+              "AssemblyName": "Microsoft.Diagnostics.NETCore.Client",
+              "AssemblyCurrentVersion": "0.2.15.501",
+              "AssemblyNewVersion": "0.2.750501"
+            }
+          }
+        },
+        {
+          "incidentId": "b9473262-1ba8-4824-a6b6-f81f03dae217",
+          "ruleId": "Binding.0007",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Binding redirect for System.Buffers targets 4.0.5.0 but package provides 4.6.1",
+              "protected": "Binding redirect for System.Buffers targets 4.0.5.0 but package provides 4.6.1"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\App.config",
+            "snippet": "Binding redirect for System.Buffers targets 4.0.5.0 but package provides 4.6.1",
+            "protectedSnippet": "Binding redirect for System.Buffers targets 4.0.5.0 but package provides 4.6.1",
+            "properties": {
+              "AssemblyName": "System.Buffers",
+              "AssemblyCurrentVersion": "4.0.5.0",
+              "AssemblyNewVersion": "4.6.1"
+            }
+          }
+        },
+        {
+          "incidentId": "de4e6c4c-21e9-4c2f-8fb9-d90067e0ff8a",
+          "ruleId": "Binding.0007",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Binding redirect for System.Memory targets 4.0.5.0 but package provides 4.6.3",
+              "protected": "Binding redirect for System.Memory targets 4.0.5.0 but package provides 4.6.3"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\App.config",
+            "snippet": "Binding redirect for System.Memory targets 4.0.5.0 but package provides 4.6.3",
+            "protectedSnippet": "Binding redirect for System.Memory targets 4.0.5.0 but package provides 4.6.3",
+            "properties": {
+              "AssemblyName": "System.Memory",
+              "AssemblyCurrentVersion": "4.0.5.0",
+              "AssemblyNewVersion": "4.6.3"
+            }
+          }
+        },
+        {
+          "incidentId": "f2f6977e-6b54-4f58-833d-e04d480cb910",
+          "ruleId": "Binding.0007",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Binding redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but package provides 6.1.2",
+              "protected": "Binding redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but package provides 6.1.2"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\App.config",
+            "snippet": "Binding redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but package provides 6.1.2",
+            "protectedSnippet": "Binding redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but package provides 6.1.2",
+            "properties": {
+              "AssemblyName": "System.Runtime.CompilerServices.Unsafe",
+              "AssemblyCurrentVersion": "6.0.3.0",
+              "AssemblyNewVersion": "6.1.2"
+            }
+          }
+        },
+        {
+          "incidentId": "daa8ea9a-6066-4513-929e-30a75ce54318",
+          "ruleId": "Binding.0007",
+          "projectPath": "EtwExplorer\\EtwExplorer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Binding redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but package provides 4.6.3",
+              "protected": "Binding redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but package provides 4.6.3"
+            },
+            "kind": "File",
+            "path": "EtwExplorer\\App.config",
+            "snippet": "Binding redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but package provides 4.6.3",
+            "protectedSnippet": "Binding redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but package provides 4.6.3",
+            "properties": {
+              "AssemblyName": "System.Threading.Tasks.Extensions",
+              "AssemblyCurrentVersion": "4.2.4.0",
+              "AssemblyNewVersion": "4.6.3"
+            }
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+      "startingProject": true,
+      "issues": 6,
+      "storyPoints": 29,
+      "properties": {
+        "appName": "EtwManifestParsing",
+        "projectKind": "ClassicClassLibrary",
+        "frameworks": [
+          "net48"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": false,
+        "isTestProject": false,
+        "numberOfFiles": 8,
+        "numberOfCodeFiles": 8,
+        "linesTotal": 678,
+        "linesOfCode": 678,
+        "totalApiScanned": 0,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "a77c4e51-68b3-4821-a97d-defb4b341608",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Bcl.AsyncInterfaces, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Bcl.AsyncInterfaces, and replace with new package Microsoft.Bcl.AsyncInterfaces 10.0.15",
+              "protected": "Microsoft.Bcl.AsyncInterfaces, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Bcl.AsyncInterfaces, and replace with new package Microsoft.Bcl.AsyncInterfaces 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "Microsoft.Bcl.AsyncInterfaces, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Bcl.AsyncInterfaces, and replace with new package Microsoft.Bcl.AsyncInterfaces 10.0.15",
+            "protectedSnippet": "Microsoft.Bcl.AsyncInterfaces, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Bcl.AsyncInterfaces, and replace with new package Microsoft.Bcl.AsyncInterfaces 10.0.15",
+            "label": "Microsoft.Bcl.AsyncInterfaces 11.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Bcl.AsyncInterfaces",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "fa7bb251-0928-48e2-86ff-149048eb6f32",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.DependencyInjection.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.DependencyInjection.Abstractions, and replace with new package Microsoft.Extensions.DependencyInjection.Abstractions 10.0.15",
+              "protected": "Microsoft.Extensions.DependencyInjection.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.DependencyInjection.Abstractions, and replace with new package Microsoft.Extensions.DependencyInjection.Abstractions 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "Microsoft.Extensions.DependencyInjection.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.DependencyInjection.Abstractions, and replace with new package Microsoft.Extensions.DependencyInjection.Abstractions 10.0.15",
+            "protectedSnippet": "Microsoft.Extensions.DependencyInjection.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.DependencyInjection.Abstractions, and replace with new package Microsoft.Extensions.DependencyInjection.Abstractions 10.0.15",
+            "label": "Microsoft.Extensions.DependencyInjection.Abstractions 11.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.DependencyInjection.Abstractions",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "dac944fc-89de-4957-8947-0ac209e8454c",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Logging.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging.Abstractions, and replace with new package Microsoft.Extensions.Logging.Abstractions 10.0.15",
+              "protected": "Microsoft.Extensions.Logging.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging.Abstractions, and replace with new package Microsoft.Extensions.Logging.Abstractions 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "Microsoft.Extensions.Logging.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging.Abstractions, and replace with new package Microsoft.Extensions.Logging.Abstractions 10.0.15",
+            "protectedSnippet": "Microsoft.Extensions.Logging.Abstractions, 11.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging.Abstractions, and replace with new package Microsoft.Extensions.Logging.Abstractions 10.0.15",
+            "label": "Microsoft.Extensions.Logging.Abstractions 11.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Logging.Abstractions",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "01665b28-0165-4d97-80ee-70e94e34fa92",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Win32.Registry, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.Win32.Registry, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "Microsoft.Win32.Registry, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.Win32.Registry, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.Win32.Registry 5.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Win32.Registry",
+              "PackageVersion": "5.0.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "3bd5c0da-1254-44b3-b95d-fdc9aa868cb7",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Buffers, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Buffers, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.Buffers, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Buffers, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Buffers 4.6.1",
+            "properties": {
+              "PackageId": "System.Buffers",
+              "PackageVersion": "4.6.1",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "c6157b21-0f79-4fda-b76a-0f08ce4e08c9",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Collections.Immutable, 11.0.0\n\nRecommendation:\n\nRemove System.Collections.Immutable, and replace with new package System.Collections.Immutable 10.0.15",
+              "protected": "System.Collections.Immutable, 11.0.0\n\nRecommendation:\n\nRemove System.Collections.Immutable, and replace with new package System.Collections.Immutable 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.Collections.Immutable, 11.0.0\n\nRecommendation:\n\nRemove System.Collections.Immutable, and replace with new package System.Collections.Immutable 10.0.15",
+            "protectedSnippet": "System.Collections.Immutable, 11.0.0\n\nRecommendation:\n\nRemove System.Collections.Immutable, and replace with new package System.Collections.Immutable 10.0.15",
+            "label": "System.Collections.Immutable 11.0.0",
+            "properties": {
+              "PackageId": "System.Collections.Immutable",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "ae414615-097e-4d59-b473-c4ac4db18082",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Diagnostics.DiagnosticSource, 11.0.0\n\nRecommendation:\n\nRemove System.Diagnostics.DiagnosticSource, and replace with new package System.Diagnostics.DiagnosticSource 10.0.15",
+              "protected": "System.Diagnostics.DiagnosticSource, 11.0.0\n\nRecommendation:\n\nRemove System.Diagnostics.DiagnosticSource, and replace with new package System.Diagnostics.DiagnosticSource 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.Diagnostics.DiagnosticSource, 11.0.0\n\nRecommendation:\n\nRemove System.Diagnostics.DiagnosticSource, and replace with new package System.Diagnostics.DiagnosticSource 10.0.15",
+            "protectedSnippet": "System.Diagnostics.DiagnosticSource, 11.0.0\n\nRecommendation:\n\nRemove System.Diagnostics.DiagnosticSource, and replace with new package System.Diagnostics.DiagnosticSource 10.0.15",
+            "label": "System.Diagnostics.DiagnosticSource 11.0.0",
+            "properties": {
+              "PackageId": "System.Diagnostics.DiagnosticSource",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "19dcf5d3-b531-4a65-a604-de7fd6fe242c",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.IO.Pipelines, 11.0.0\n\nRecommendation:\n\nRemove System.IO.Pipelines, and replace with new package System.IO.Pipelines 10.0.15",
+              "protected": "System.IO.Pipelines, 11.0.0\n\nRecommendation:\n\nRemove System.IO.Pipelines, and replace with new package System.IO.Pipelines 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.IO.Pipelines, 11.0.0\n\nRecommendation:\n\nRemove System.IO.Pipelines, and replace with new package System.IO.Pipelines 10.0.15",
+            "protectedSnippet": "System.IO.Pipelines, 11.0.0\n\nRecommendation:\n\nRemove System.IO.Pipelines, and replace with new package System.IO.Pipelines 10.0.15",
+            "label": "System.IO.Pipelines 11.0.0",
+            "properties": {
+              "PackageId": "System.IO.Pipelines",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "2f85d189-bf90-44af-aeca-6143acf1aa41",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Memory, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Memory, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.Memory, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Memory, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Memory 4.6.3",
+            "properties": {
+              "PackageId": "System.Memory",
+              "PackageVersion": "4.6.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "180b38fc-8ad7-4116-9961-c2c4316196bb",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Numerics.Vectors, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Numerics.Vectors, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.Numerics.Vectors, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Numerics.Vectors, 4.6.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Numerics.Vectors 4.6.1",
+            "properties": {
+              "PackageId": "System.Numerics.Vectors",
+              "PackageVersion": "4.6.1",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "c84ed782-251b-4a01-b46c-151e8855894f",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Reflection.Metadata, 11.0.0\n\nRecommendation:\n\nRemove System.Reflection.Metadata, and replace with new package System.Reflection.Metadata 10.0.15",
+              "protected": "System.Reflection.Metadata, 11.0.0\n\nRecommendation:\n\nRemove System.Reflection.Metadata, and replace with new package System.Reflection.Metadata 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.Reflection.Metadata, 11.0.0\n\nRecommendation:\n\nRemove System.Reflection.Metadata, and replace with new package System.Reflection.Metadata 10.0.15",
+            "protectedSnippet": "System.Reflection.Metadata, 11.0.0\n\nRecommendation:\n\nRemove System.Reflection.Metadata, and replace with new package System.Reflection.Metadata 10.0.15",
+            "label": "System.Reflection.Metadata 11.0.0",
+            "properties": {
+              "PackageId": "System.Reflection.Metadata",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "03e99db5-118e-40fe-8172-12dc1a0df507",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Reflection.TypeExtensions, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Reflection.TypeExtensions, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.Reflection.TypeExtensions, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Reflection.TypeExtensions, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Reflection.TypeExtensions 4.7.0",
+            "properties": {
+              "PackageId": "System.Reflection.TypeExtensions",
+              "PackageVersion": "4.7.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "734e8109-d384-4b7f-abbb-1193c50ff192",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Security.Principal.Windows, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Security.Principal.Windows, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.Security.Principal.Windows, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Security.Principal.Windows, 5.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Security.Principal.Windows 5.0.0",
+            "properties": {
+              "PackageId": "System.Security.Principal.Windows",
+              "PackageVersion": "5.0.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "a6155959-1166-4d73-828d-113f2a07ea03",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Text.Encodings.Web, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Encodings.Web, and replace with new package System.Text.Encodings.Web 10.0.15",
+              "protected": "System.Text.Encodings.Web, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Encodings.Web, and replace with new package System.Text.Encodings.Web 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.Text.Encodings.Web, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Encodings.Web, and replace with new package System.Text.Encodings.Web 10.0.15",
+            "protectedSnippet": "System.Text.Encodings.Web, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Encodings.Web, and replace with new package System.Text.Encodings.Web 10.0.15",
+            "label": "System.Text.Encodings.Web 11.0.0",
+            "properties": {
+              "PackageId": "System.Text.Encodings.Web",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "ad9f6f76-5439-420d-b964-c5551214fb66",
+          "ruleId": "NuGet.0002",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Text.Json, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Json, and replace with new package System.Text.Json 10.0.15",
+              "protected": "System.Text.Json, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Json, and replace with new package System.Text.Json 10.0.15"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.Text.Json, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Json, and replace with new package System.Text.Json 10.0.15",
+            "protectedSnippet": "System.Text.Json, 11.0.0\n\nRecommendation:\n\nRemove System.Text.Json, and replace with new package System.Text.Json 10.0.15",
+            "label": "System.Text.Json 11.0.0",
+            "properties": {
+              "PackageId": "System.Text.Json",
+              "PackageVersion": "11.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "f90335e4-0703-4232-87e0-cfd1c2e8e3ac",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Threading.Tasks.Extensions, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Threading.Tasks.Extensions, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.Threading.Tasks.Extensions, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Threading.Tasks.Extensions, 4.6.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Threading.Tasks.Extensions 4.6.3",
+            "properties": {
+              "PackageId": "System.Threading.Tasks.Extensions",
+              "PackageVersion": "4.6.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "094c8f77-cbcf-4646-8dd4-edc78686aa61",
+          "ruleId": "NuGet.0003",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.ValueTuple, 4.6.2\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.ValueTuple, 4.6.2\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "System.ValueTuple, 4.6.2\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.ValueTuple, 4.6.2\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.ValueTuple 4.6.2",
+            "properties": {
+              "PackageId": "System.ValueTuple",
+              "PackageVersion": "4.6.2",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "c43fc0ce-90f0-42a5-ae29-b928df1e9327",
+          "ruleId": "Project.0001",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj"
+          }
+        },
+        {
+          "incidentId": "e4925285-fae2-4d4c-8a08-4c1381d0fdc3",
+          "ruleId": "Project.0002",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net11.0",
+              "protected": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net11.0"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\EtwManifestParsing.csproj",
+            "snippet": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net11.0",
+            "protectedSnippet": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net11.0",
+            "properties": {
+              "CurrentTargetFramework": ".NETFramework,Version=v4.8",
+              "RecommendedTargetFramework": "net11.0"
+            }
+          }
+        },
+        {
+          "incidentId": "9599b0e6-6fa8-4117-a0c2-571001599eb8",
+          "ruleId": "Binding.0006",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Manual redirect for System.Memory targets 4.0.5.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+              "protected": "Manual redirect for System.Memory targets 4.0.5.0 but auto-generation would target 4.6.3 (MSB3836 conflict)"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\App.config",
+            "snippet": "Manual redirect for System.Memory targets 4.0.5.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+            "protectedSnippet": "Manual redirect for System.Memory targets 4.0.5.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+            "properties": {
+              "AssemblyName": "System.Memory",
+              "AssemblyCurrentVersion": "4.0.5.0",
+              "AssemblyNewVersion": "4.6.3"
+            }
+          }
+        },
+        {
+          "incidentId": "4a64b9da-532b-4d9f-ae5e-29cc1f35b3ad",
+          "ruleId": "Binding.0006",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Manual redirect for System.Buffers targets 4.0.5.0 but auto-generation would target 4.6.1 (MSB3836 conflict)",
+              "protected": "Manual redirect for System.Buffers targets 4.0.5.0 but auto-generation would target 4.6.1 (MSB3836 conflict)"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\App.config",
+            "snippet": "Manual redirect for System.Buffers targets 4.0.5.0 but auto-generation would target 4.6.1 (MSB3836 conflict)",
+            "protectedSnippet": "Manual redirect for System.Buffers targets 4.0.5.0 but auto-generation would target 4.6.1 (MSB3836 conflict)",
+            "properties": {
+              "AssemblyName": "System.Buffers",
+              "AssemblyCurrentVersion": "4.0.5.0",
+              "AssemblyNewVersion": "4.6.1"
+            }
+          }
+        },
+        {
+          "incidentId": "6ad3fe72-e44c-4066-bad8-0c3ad75aeef0",
+          "ruleId": "Binding.0006",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Manual redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but auto-generation would target 6.1.2 (MSB3836 conflict)",
+              "protected": "Manual redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but auto-generation would target 6.1.2 (MSB3836 conflict)"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\App.config",
+            "snippet": "Manual redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but auto-generation would target 6.1.2 (MSB3836 conflict)",
+            "protectedSnippet": "Manual redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but auto-generation would target 6.1.2 (MSB3836 conflict)",
+            "properties": {
+              "AssemblyName": "System.Runtime.CompilerServices.Unsafe",
+              "AssemblyCurrentVersion": "6.0.3.0",
+              "AssemblyNewVersion": "6.1.2"
+            }
+          }
+        },
+        {
+          "incidentId": "69d24aab-efdf-4d1a-9d9f-22ef44a1178f",
+          "ruleId": "Binding.0006",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Manual redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+              "protected": "Manual redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but auto-generation would target 4.6.3 (MSB3836 conflict)"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\App.config",
+            "snippet": "Manual redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+            "protectedSnippet": "Manual redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but auto-generation would target 4.6.3 (MSB3836 conflict)",
+            "properties": {
+              "AssemblyName": "System.Threading.Tasks.Extensions",
+              "AssemblyCurrentVersion": "4.2.4.0",
+              "AssemblyNewVersion": "4.6.3"
+            }
+          }
+        },
+        {
+          "incidentId": "9c8c1876-c5fe-40b1-9957-18fa8013ea41",
+          "ruleId": "Binding.0006",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Manual redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but auto-generation would target 0.2.750501 (MSB3836 conflict)",
+              "protected": "Manual redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but auto-generation would target 0.2.750501 (MSB3836 conflict)"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\App.config",
+            "snippet": "Manual redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but auto-generation would target 0.2.750501 (MSB3836 conflict)",
+            "protectedSnippet": "Manual redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but auto-generation would target 0.2.750501 (MSB3836 conflict)",
+            "properties": {
+              "AssemblyName": "Microsoft.Diagnostics.NETCore.Client",
+              "AssemblyCurrentVersion": "0.2.15.501",
+              "AssemblyNewVersion": "0.2.750501"
+            }
+          }
+        },
+        {
+          "incidentId": "b24948fc-0d3e-43ff-88b1-259e3a512ccc",
+          "ruleId": "Binding.0007",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Binding redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but package provides 0.2.750501",
+              "protected": "Binding redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but package provides 0.2.750501"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\App.config",
+            "snippet": "Binding redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but package provides 0.2.750501",
+            "protectedSnippet": "Binding redirect for Microsoft.Diagnostics.NETCore.Client targets 0.2.15.501 but package provides 0.2.750501",
+            "properties": {
+              "AssemblyName": "Microsoft.Diagnostics.NETCore.Client",
+              "AssemblyCurrentVersion": "0.2.15.501",
+              "AssemblyNewVersion": "0.2.750501"
+            }
+          }
+        },
+        {
+          "incidentId": "2a688dc7-aad8-4d0f-ba1d-caf1828aeffe",
+          "ruleId": "Binding.0007",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Binding redirect for System.Buffers targets 4.0.5.0 but package provides 4.6.1",
+              "protected": "Binding redirect for System.Buffers targets 4.0.5.0 but package provides 4.6.1"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\App.config",
+            "snippet": "Binding redirect for System.Buffers targets 4.0.5.0 but package provides 4.6.1",
+            "protectedSnippet": "Binding redirect for System.Buffers targets 4.0.5.0 but package provides 4.6.1",
+            "properties": {
+              "AssemblyName": "System.Buffers",
+              "AssemblyCurrentVersion": "4.0.5.0",
+              "AssemblyNewVersion": "4.6.1"
+            }
+          }
+        },
+        {
+          "incidentId": "0c54d172-4844-48b6-a505-25d356e4e208",
+          "ruleId": "Binding.0007",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Binding redirect for System.Memory targets 4.0.5.0 but package provides 4.6.3",
+              "protected": "Binding redirect for System.Memory targets 4.0.5.0 but package provides 4.6.3"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\App.config",
+            "snippet": "Binding redirect for System.Memory targets 4.0.5.0 but package provides 4.6.3",
+            "protectedSnippet": "Binding redirect for System.Memory targets 4.0.5.0 but package provides 4.6.3",
+            "properties": {
+              "AssemblyName": "System.Memory",
+              "AssemblyCurrentVersion": "4.0.5.0",
+              "AssemblyNewVersion": "4.6.3"
+            }
+          }
+        },
+        {
+          "incidentId": "e9d6d7c4-b8f3-463d-bfac-7e19dad21a70",
+          "ruleId": "Binding.0007",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Binding redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but package provides 6.1.2",
+              "protected": "Binding redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but package provides 6.1.2"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\App.config",
+            "snippet": "Binding redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but package provides 6.1.2",
+            "protectedSnippet": "Binding redirect for System.Runtime.CompilerServices.Unsafe targets 6.0.3.0 but package provides 6.1.2",
+            "properties": {
+              "AssemblyName": "System.Runtime.CompilerServices.Unsafe",
+              "AssemblyCurrentVersion": "6.0.3.0",
+              "AssemblyNewVersion": "6.1.2"
+            }
+          }
+        },
+        {
+          "incidentId": "d4cd2524-c24d-4044-8531-ebf926b82933",
+          "ruleId": "Binding.0007",
+          "projectPath": "EtwManifestParsing\\EtwManifestParsing.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Binding redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but package provides 4.6.3",
+              "protected": "Binding redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but package provides 4.6.3"
+            },
+            "kind": "File",
+            "path": "EtwManifestParsing\\App.config",
+            "snippet": "Binding redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but package provides 4.6.3",
+            "protectedSnippet": "Binding redirect for System.Threading.Tasks.Extensions targets 4.2.4.0 but package provides 4.6.3",
+            "properties": {
+              "AssemblyName": "System.Threading.Tasks.Extensions",
+              "AssemblyCurrentVersion": "4.2.4.0",
+              "AssemblyNewVersion": "4.6.3"
+            }
+          }
+        }
+      ],
+      "features": []
+    }
+  ],
+  "rules": {
+    "NuGet.0002": {
+      "id": "NuGet.0002",
+      "isFeature": false,
+      "description": "NuGet package upgrade is recommended for selected target framework.\n\nStandard .NET packages are recommended to have versions matching version of .NET that project targets.\n\nSome other packages also are known to work better for selected target frameworks.",
+      "label": "NuGet package upgrade is recommended",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262530",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0003": {
+      "id": "NuGet.0003",
+      "isFeature": false,
+      "description": "NuGet package functionality is included with framework reference.\n\nPackage needs to be removed.",
+      "label": "NuGet package functionality is included with framework reference",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262609",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0001": {
+      "id": "Project.0001",
+      "isFeature": false,
+      "description": "Project file needs to be converted to SDK-style. Modern .NET framework projects require a change in the project file format and use SDK corresponding to project flavor and functionality.",
+      "label": "Project file needs to be converted to SDK-style",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Binding.0006": {
+      "id": "Binding.0006",
+      "isFeature": false,
+      "description": "An explicit binding redirect targets a different version than what auto-generation would produce. MSBuild will throw MSB3836 conflict error because it cannot determine which redirect wins.",
+      "label": "Manual redirect conflicts with auto-generated version",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Assembly binding redirection",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262689",
+          "isCustom": false
+        }
+      ]
+    },
+    "Binding.0007": {
+      "id": "Binding.0007",
+      "isFeature": false,
+      "description": "A binding redirect\u0027s newVersion is lower than the version provided by the NuGet package. This forced downgrade usually causes a load failure at runtime because the expected assembly version is not available.",
+      "label": "Binding redirect forces version downgrade",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Assembly binding redirection",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262689",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0001": {
+      "id": "NuGet.0001",
+      "isFeature": false,
+      "description": "NuGet package is incompatible with selected target framework.\n\nPackage needs to be upgraded to a version supporting selected project target framework. If there no new package versions supporting new target framework, different package needs to be used and all code needs to be upgraded to new API.",
+      "label": "NuGet package is incompatible",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262529",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}
