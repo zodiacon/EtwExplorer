@@ -1,0 +1,11 @@
+<Project>
+
+  <!-- Shared by every project in the solution (replaces the linked SharedAssemblyInfo.cs). -->
+  <PropertyGroup>
+	<Version>0.40.0</Version>
+	<Copyright>© 2019 Pavel Yosifovch</Copyright>
+	<Authors>Pavel Yosifovich</Authors>
+	<Product>ETW Explorer</Product>
+  </PropertyGroup>
+
+</Project>
