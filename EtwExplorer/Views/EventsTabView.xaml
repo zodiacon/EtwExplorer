@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:EtwExplorer.Views"
              xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d" 
-             xmlns:z="http://zodiacon.wpf/2016"
+             xmlns:z="clr-namespace:EtwExplorer.Infrastructure"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>

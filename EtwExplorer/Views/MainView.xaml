@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EtwExplorer.Views"
              mc:Ignorable="d" 
-             xmlns:z="http://zodiacon.wpf/2016"
+             xmlns:z="clr-namespace:EtwExplorer.Infrastructure"
              xmlns:vm="clr-namespace:EtwExplorer.ViewModels"
              xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
              d:DesignHeight="450" d:DesignWidth="800">

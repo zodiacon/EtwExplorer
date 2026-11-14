@@ -1,4 +1,5 @@
-﻿using Microsoft.Diagnostics.Tracing.Session;
+﻿using EtwExplorer.Infrastructure;
+using Microsoft.Diagnostics.Tracing.Session;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
-using Zodiacon.WPF;
 
 namespace EtwExplorer.ViewModels {
 	sealed class Provider {

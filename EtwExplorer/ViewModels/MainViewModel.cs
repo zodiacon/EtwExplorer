@@ -1,4 +1,5 @@
-﻿using EtwExplorer.Views;
+﻿using EtwExplorer.Infrastructure;
+using EtwExplorer.Views;
 using EtwManifestParsing;
 using Microsoft.Diagnostics.Tracing.Parsers;
 using Microsoft.Diagnostics.Tracing.Session;
@@ -13,7 +14,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using Zodiacon.WPF;
 
 namespace EtwExplorer.ViewModels {
 	class MainViewModel : BindableBase {

@@ -5,7 +5,7 @@
         xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EtwExplorer.Views"
-                   xmlns:z="http://zodiacon.wpf/2016"
+                   xmlns:z="clr-namespace:EtwExplorer.Infrastructure"
         mc:Ignorable="d" ResizeMode="CanResizeWithGrip"
         Title="Select ETW Provider" TitleCharacterCasing="Normal" MinHeight="400" MinWidth="600" SizeToContent="Width" >
     <Grid Margin="8">

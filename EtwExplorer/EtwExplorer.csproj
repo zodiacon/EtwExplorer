@@ -1,16 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net11.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
     <AssemblyTitle>EtwExplorer</AssemblyTitle>
     <ApplicationIcon>app.ico</ApplicationIcon>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Configuration" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EtwManifestParsing\EtwManifestParsing.csproj" />
@@ -25,7 +21,6 @@
     <PackageReference Include="MahApps.Metro" Version="2.4.11" />
     <PackageReference Include="Microsoft.Diagnostics.Tracing.TraceEvent" Version="4.0.0" />
     <PackageReference Include="Prism.Core" Version="9.0.537" />
-    <PackageReference Include="Zodiacon.WPF" Version="1.3.0" />
   </ItemGroup>
 
 </Project>
