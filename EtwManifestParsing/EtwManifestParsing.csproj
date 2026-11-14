@@ -1,17 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net11.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
     <AssemblyTitle>EtwManifestParsing</AssemblyTitle>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="System.Management" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.Diagnostics.Tracing.TraceEvent" Version="4.0.0" />
+    <PackageReference Include="System.Management" Version="11.0.0" />
   </ItemGroup>
 
 </Project>
