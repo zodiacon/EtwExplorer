@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:EtwExplorer.Views"
                    xmlns:z="http://zodiacon.wpf/2016"
         mc:Ignorable="d" ResizeMode="CanResizeWithGrip"
-        Title="Select ETW Provider" TitleCaps="False" MinHeight="400" MinWidth="600" SizeToContent="Width" >
+        Title="Select ETW Provider" TitleCharacterCasing="Normal" MinHeight="400" MinWidth="600" SizeToContent="Width" >
     <Grid Margin="8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -20,12 +20,12 @@
             <TextBlock Text="Search:" VerticalAlignment="Center" />
             <TextBox Margin="4,0,0,0" Width="200" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Delay=300}" 
                      metro:TextBoxHelper.Watermark="Type to search" metro:TextBoxHelper.ClearTextButton="True" z:FocusProperties.FocusOnLoad="True"/>
-            <ToggleButton Style="{StaticResource MetroFlatToggleButton}" Content="Likely Existing Manifests" IsChecked="{Binding IsLikely}" Margin="4,0,0,0"/>
+            <ToggleButton Content="Likely Existing Manifests" IsChecked="{Binding IsLikely}" Margin="4,0,0,0"/>
             <CheckBox Content="Close Current Manifest" Margin="8,0,0,0" IsChecked="{Binding CloseCurrentManifest}" />
         </StackPanel>
-
+ 
         <DataGrid Grid.Row="2" AutoGenerateColumns="False" IsReadOnly="True" SelectionUnit="FullRow" SelectionMode="Single" SelectedItem="{Binding SelectedProvider, Mode=TwoWay}"
-                  ItemsSource="{Binding Providers}" metro:ButtonHelper.PreserveTextCase="True" >
+                  ItemsSource="{Binding Providers}" metro:ControlsHelper.ContentCharacterCasing="Normal" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" FontWeight="Bold" />
                 <DataGridTextColumn Header="GUID" Binding="{Binding Guid}" />

@@ -20,7 +20,7 @@
                      metro:TextBoxHelper.Watermark="Type to search" metro:TextBoxHelper.ClearTextButton="True" z:FocusProperties.FocusOnLoad="True" />
         </StackPanel>
         <DataGrid Grid.Row="2" ItemsSource="{Binding Events}" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" 
-                  metro:ButtonHelper.PreserveTextCase="True" RowDetailsVisibilityMode="VisibleWhenSelected" VirtualizingPanel.VirtualizationMode="Recycling">
+                  metro:ControlsHelper.ContentCharacterCasing="Normal" RowDetailsVisibilityMode="VisibleWhenSelected" VirtualizingPanel.VirtualizationMode="Recycling">
             <DataGrid.RowDetailsTemplate>
                 <DataTemplate>
                     <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding EventDetails}" IsReadOnly="True" BorderBrush="{DynamicResource BlackBrush}" BorderThickness="1" Margin="4"

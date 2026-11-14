@@ -8,7 +8,7 @@
              xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid ItemsSource="{Binding Keywords}" AutoGenerateColumns="False" IsReadOnly="True" metro:ButtonHelper.PreserveTextCase="True">
+        <DataGrid ItemsSource="{Binding Keywords}" AutoGenerateColumns="False" IsReadOnly="True" metro:ControlsHelper.ContentCharacterCasing="Normal">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" FontWeight="Bold" />
                 <DataGridTextColumn Header="Value" Binding="{Binding Mask, StringFormat=0x\{0:X\}}" ElementStyle="{StaticResource DataGridCellRightJustifiedStyle}" />

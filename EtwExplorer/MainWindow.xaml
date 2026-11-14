@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:EtwExplorer"
         xmlns:view="clr-namespace:EtwExplorer.Views"
         mc:Ignorable="d"
-        Title="{x:Static local:Constants.WindowTitle}" TitleCaps="False" ResizeMode="CanResizeWithGrip"
+        Title="{x:Static local:Constants.WindowTitle}" TitleCharacterCasing="Normal" ResizeMode="CanResizeWithGrip"
                    Icon="/icons/app.ico">
     <view:MainView>
         

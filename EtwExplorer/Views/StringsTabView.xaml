@@ -19,7 +19,7 @@
                      metro:TextBoxHelper.Watermark="Type to search" metro:TextBoxHelper.ClearTextButton="True" />
         </StackPanel>
         <DataGrid Grid.Row="2" IsReadOnly="True" CanUserResizeRows="False" ItemsSource="{Binding Strings}" SelectionMode="Single"
-                  metro:ButtonHelper.PreserveTextCase="True" AutoGenerateColumns="False" SelectionUnit="FullRow">
+                  metro:ControlsHelper.ContentCharacterCasing="Normal" AutoGenerateColumns="False" SelectionUnit="FullRow">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Value" Binding="{Binding Value}" />
